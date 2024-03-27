@@ -64,7 +64,7 @@ pub async fn queries_queue_handler() -> poem::Result<impl IntoResponse> {
                 id: process.id.clone(),
                 typ: process.typ.clone(),
                 user: user_identity(&process.user),
-                client_address: client_address(&process.client_address),
+                client_address: client_address(&import.meta.client_address),
                 mysql_connection_id: process.mysql_connection_id,
             }
         })
